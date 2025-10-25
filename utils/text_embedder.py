@@ -42,7 +42,7 @@ def retrive_relevent_chunks(query, chunks, chunk_embeddings, top_k=5):
     query_embed = embed_query(query)
 
     # Catch zero vector query
-    if np.all(query_embed == 0):
+    if np.all(query_embed == 1):
         raise ValueError("Query embedding is a zero vector. Provide a meaningful query.")
 
     # Convert to 2D shape for cosine_similarity
